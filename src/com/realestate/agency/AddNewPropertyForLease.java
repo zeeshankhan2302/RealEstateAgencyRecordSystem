@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
 
 public class AddNewPropertyForLease extends JFrame {
 
@@ -112,6 +113,19 @@ public class AddNewPropertyForLease extends JFrame {
 		propertyForLeaseTenantPhoneNumberTextField = new JTextField();
 		panel.add(propertyForLeaseTenantPhoneNumberTextField);
 		propertyForLeaseTenantPhoneNumberTextField.setColumns(10);
+		
+		JPanel panelBackToMainMenuPanel = new JPanel();
+		panelBackToMainMenuPanel.setBackground(new Color(0, 128, 128));
+		panelBackToMainMenuPanel.setForeground(new Color(224, 255, 255));
+		contentPane.add(panelBackToMainMenuPanel, BorderLayout.SOUTH);
+		panelBackToMainMenuPanel.setLayout(new BorderLayout(0, 0));
+		
+		JButton btnNewButton = new JButton("Back To Main Menu");
+		btnNewButton.setFont(new Font("Lohit Devanagari", Font.ITALIC, 14));
+		btnNewButton.setBackground(new Color(0, 128, 128));
+		btnNewButton.setForeground(new Color(224, 255, 255));
+		panelBackToMainMenuPanel.add(btnNewButton);
+		this.setResizable(false);
 	}
 
 }

@@ -11,6 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import java.awt.FlowLayout;
 
 public class AddNewPropertyForSale extends JFrame {
 
@@ -110,6 +112,19 @@ public class AddNewPropertyForSale extends JFrame {
 		propertyForSaleAreaOfBuildingTextField = new JTextField();
 		panel.add(propertyForSaleAreaOfBuildingTextField);
 		propertyForSaleAreaOfBuildingTextField.setColumns(10);
+		
+		JPanel backToMainMenuPanel = new JPanel();
+		backToMainMenuPanel.setBackground(new Color(0, 128, 128));
+		backToMainMenuPanel.setForeground(new Color(224, 255, 255));
+		contentPane.add(backToMainMenuPanel, BorderLayout.SOUTH);
+		backToMainMenuPanel.setLayout(new BorderLayout(0, 0));
+		
+		JButton backToMainMenuButton = new JButton("BackToMainMenu");
+		backToMainMenuButton.setFont(new Font("Lohit Devanagari", Font.ITALIC, 14));
+		backToMainMenuButton.setBackground(new Color(0, 128, 128));
+		backToMainMenuButton.setForeground(new Color(224, 255, 255));
+		backToMainMenuPanel.add(backToMainMenuButton);
+		this.setResizable(false);
 	}
 
 

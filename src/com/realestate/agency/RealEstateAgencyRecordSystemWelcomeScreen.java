@@ -15,6 +15,8 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import com.realestate.agency.util.RealEstateAgencyUtil;
+
 public class RealEstateAgencyRecordSystemWelcomeScreen extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
@@ -24,8 +26,8 @@ public class RealEstateAgencyRecordSystemWelcomeScreen extends JFrame implements
 			public void run() {
 				try {
 
-					RealEstateAgencyRecordSystemWelcomeScreen welcomeScreen = new RealEstateAgencyRecordSystemWelcomeScreen();
-					welcomeScreen.setVisible(true);
+					RealEstateAgencyUtil.realEstateAgencyRecordSystemWelcomeScreenInstance().setVisible(true);
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -37,6 +39,7 @@ public class RealEstateAgencyRecordSystemWelcomeScreen extends JFrame implements
 	 * Create the frame.
 	 */
 	public RealEstateAgencyRecordSystemWelcomeScreen() {
+
 		setFont(new Font("Lohit Devanagari", Font.BOLD, 12));
 		setTitle("Surbub Real Estate Agency");
 		setForeground(new Color(224, 255, 255));
@@ -82,19 +85,19 @@ public class RealEstateAgencyRecordSystemWelcomeScreen extends JFrame implements
 		buttonNextWelcome.setForeground(new Color(0, 0, 0));
 		buttonNextWelcome.setFont(new Font("Lohit Devanagari", Font.BOLD, 18));
 		buttonNextWelcome.setHorizontalAlignment(SwingConstants.CENTER);
-		
+
 		buttonNextWelcome.addActionListener(this);
 		panelNextWelcome.add(buttonNextWelcome, BorderLayout.CENTER);
-		
+
 		this.setResizable(false);
-		
+
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+
 		this.setVisible(false);
-		MenuFrame mf=new MenuFrame();
-		mf.setVisible(true);
+		RealEstateAgencyUtil.menuFrameInstance().setVisible(true);
+		;
 	}
 }

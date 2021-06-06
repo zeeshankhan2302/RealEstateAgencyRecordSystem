@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
 
 public class AddNewLandLord extends JFrame {
 
@@ -100,5 +101,18 @@ public class AddNewLandLord extends JFrame {
 		landLordAmountOfRentReceivedPerWeekTextField = new JTextField();
 		panel.add(landLordAmountOfRentReceivedPerWeekTextField);
 		landLordAmountOfRentReceivedPerWeekTextField.setColumns(10);
+		
+		JPanel panelBackMenuPanel = new JPanel();
+		panelBackMenuPanel.setBackground(new Color(0, 128, 128));
+		contentPane.add(panelBackMenuPanel, BorderLayout.SOUTH);
+		panelBackMenuPanel.setLayout(new BorderLayout(0, 0));
+		
+		JButton buttonBackMenu = new JButton("Back To Main Menu");
+		buttonBackMenu.setFont(new Font("Lohit Devanagari", Font.ITALIC, 14));
+		buttonBackMenu.setForeground(new Color(224, 255, 255));
+		buttonBackMenu.setBackground(new Color(0, 128, 128));
+		panelBackMenuPanel.add(buttonBackMenu);
+		
+		this.setResizable(false);
 	}
 }

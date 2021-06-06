@@ -8,7 +8,7 @@ public abstract class PropertyOwner {
 	protected String ownerName;
 	protected String ownerAddress;
 	protected String ownerId;
-	protected boolean sellerOrLandLord;
+	protected int sellerOrLandLord;
 	
 	
 	
@@ -33,10 +33,10 @@ public abstract class PropertyOwner {
 	public void setOwnerId(String ownerId) {
 		this.ownerId = ownerId;
 	}
-	public boolean isSellerOrLandLord() {
+	public int isSellerOrLandLord() {
 		return sellerOrLandLord;
 	}
-	public void setSellerOrLandLord(boolean sellerOrLandLord) {
+	public void setSellerOrLandLord(int sellerOrLandLord) {
 		this.sellerOrLandLord = sellerOrLandLord;
 	}
 	

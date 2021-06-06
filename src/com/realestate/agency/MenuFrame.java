@@ -7,6 +7,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import com.realestate.agency.util.RealEstateAgencyUtil;
+
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -159,6 +162,7 @@ public class MenuFrame extends JFrame implements ActionListener {
 		panel_9.add(buttonExitProgram);
 
 		this.setResizable(false);
+		RealEstateAgencyUtil.realEstateAgencyRecordSystemWelcomeScreenInstance().setVisible(false);
 	}
 
 	@Override
@@ -171,15 +175,26 @@ public class MenuFrame extends JFrame implements ActionListener {
 
 		} else if (buttonClicked == addSellerButton) {
 			//add a new saler
+			
+			RealEstateAgencyUtil.addNewSalerInstance().setVisible(true);
+			removeBackroundWindow();
 
 		} else if (buttonClicked == buttonAddLandLord) {
 			//add a newLandLord
+			
+			RealEstateAgencyUtil.addNewLandLordInstance().setVisible(true);
+			removeBackroundWindow();
 
 		} else if (buttonClicked == buttonaddAPropertyForSale) {
 			//add a property for sale
+			
+			RealEstateAgencyUtil.addNewPropertyForSaleInstance().setVisible(true);
+			removeBackroundWindow();
 
 		} else if (buttonClicked == buttonAddNewLeasedRentalProperty) {
 			//add a new leased RentalProperty
+			RealEstateAgencyUtil.addNewPropertyForLeaseInstance().setVisible(true);
+			removeBackroundWindow();
 
 		} else if (buttonClicked == buttonGeneratePropertyForSaleReport) {
 
@@ -189,10 +204,18 @@ public class MenuFrame extends JFrame implements ActionListener {
 
 		} else if (buttonClicked == buttonExitProgram) {
 			//do program cleanup here before exit
+			
+			System.exit(0);
 
 		}
 		else {
 			JOptionPane.showMessageDialog(this, "An erro occured in the program");
 		}
+		
+	}
+	
+	private void removeBackroundWindow() {
+		
+		RealEstateAgencyUtil.menuFrameInstance().setVisible(false);
 	}
 }
