@@ -22,10 +22,11 @@ public class MenuFrame extends JFrame {
 		setBackground(new Color(0, 128, 128));
 		setForeground(new Color(224, 255, 255));
 		setFont(new Font("Lohit Devanagari", Font.BOLD, 12));
-		setTitle("Surbub Menu");
+		setTitle("Surbub Real Estate Menu");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 128, 128));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);

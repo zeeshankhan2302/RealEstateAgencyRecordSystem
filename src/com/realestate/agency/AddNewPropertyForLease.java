@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class AddNewPropertyForSale extends JFrame {
+public class AddNewPropertyForLease extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField propertyForLeaseAddressTextField;
@@ -20,11 +20,13 @@ public class AddNewPropertyForSale extends JFrame {
 	private JTextField propertyForLeaseUniqueCodeTextField;
 	private JTextField propertyForLeaseOwnerCodeTextField;
 	private JTextField propertyForLeaseDigitIdentifierTextField;
+	private JTextField propertyForLeaseNameOfTenantTextField;
+	private JTextField propertyForLeaseTenantPhoneNumberTextField;
 
 	/**
 	 * Create the frame.
 	 */
-	 public AddNewPropertyForSale() {
+	 public AddNewPropertyForLease() {
 		 
 		setForeground(new Color(224, 255, 255));
 		setBackground(new Color(0, 128, 128));
@@ -43,7 +45,7 @@ public class AddNewPropertyForSale extends JFrame {
 		panel.setForeground(new Color(253, 245, 230));
 		panel.setBackground(new Color(95, 158, 160));
 		contentPane.add(panel, BorderLayout.CENTER);
-		panel.setLayout(new GridLayout(5, 2, 2, 2));
+		panel.setLayout(new GridLayout(7, 2, 2, 2));
 		
 		JLabel propertyForLeaseAddressJLabel = new JLabel("Property Street Address:");
 		propertyForLeaseAddressJLabel.setBackground(new Color(0, 128, 128));
@@ -90,7 +92,26 @@ public class AddNewPropertyForSale extends JFrame {
 		propertyForLeaseDigitIdentifierTextField = new JTextField();
 		panel.add(propertyForLeaseDigitIdentifierTextField);
 		propertyForLeaseDigitIdentifierTextField.setColumns(10);
+		
+		JLabel propertyForLeaseNameOfTenantLabel = new JLabel("Name of Tenant:");
+		propertyForLeaseNameOfTenantLabel.setFont(new Font("Lohit Devanagari", Font.BOLD, 18));
+		propertyForLeaseNameOfTenantLabel.setForeground(new Color(224, 255, 255));
+		propertyForLeaseNameOfTenantLabel.setBackground(new Color(0, 128, 128));
+		panel.add(propertyForLeaseNameOfTenantLabel);
+		
+		propertyForLeaseNameOfTenantTextField = new JTextField();
+		panel.add(propertyForLeaseNameOfTenantTextField);
+		propertyForLeaseNameOfTenantTextField.setColumns(10);
+		
+		JLabel propertyForLeaseTenantPhoneNumberLabel = new JLabel("Tenant Phone Number:");
+		propertyForLeaseTenantPhoneNumberLabel.setFont(new Font("Lohit Devanagari", Font.BOLD, 18));
+		propertyForLeaseTenantPhoneNumberLabel.setBackground(new Color(0, 128, 128));
+		propertyForLeaseTenantPhoneNumberLabel.setForeground(new Color(224, 255, 255));
+		panel.add(propertyForLeaseTenantPhoneNumberLabel);
+		
+		propertyForLeaseTenantPhoneNumberTextField = new JTextField();
+		panel.add(propertyForLeaseTenantPhoneNumberTextField);
+		propertyForLeaseTenantPhoneNumberTextField.setColumns(10);
 	}
-
 
 }
