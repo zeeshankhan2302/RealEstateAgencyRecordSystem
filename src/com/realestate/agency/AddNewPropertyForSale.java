@@ -15,11 +15,13 @@ import javax.swing.border.EmptyBorder;
 public class AddNewPropertyForSale extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField propertyForLeaseAddressTextField;
-	private JTextField propertyForLeaseTownTextField;
-	private JTextField propertyForLeaseUniqueCodeTextField;
-	private JTextField propertyForLeaseOwnerCodeTextField;
+	private JTextField propertyForSaleAddressTextField;
+	private JTextField propertyForSaleTownTextField;
+	private JTextField propertyForSaleUniqueCodeTextField;
+	private JTextField propertyForSaleOwnerCodeTextField;
 	private JTextField propertyForLeaseDigitIdentifierTextField;
+	private JTextField propertyForSaleAmountToReceiveTextField;
+	private JTextField propertyForSaleAreaOfBuildingTextField;
 
 	/**
 	 * Create the frame.
@@ -43,44 +45,44 @@ public class AddNewPropertyForSale extends JFrame {
 		panel.setForeground(new Color(253, 245, 230));
 		panel.setBackground(new Color(95, 158, 160));
 		contentPane.add(panel, BorderLayout.CENTER);
-		panel.setLayout(new GridLayout(5, 2, 2, 2));
+		panel.setLayout(new GridLayout(7, 2, 2, 2));
 		
-		JLabel propertyForLeaseAddressJLabel = new JLabel("Property Street Address:");
-		propertyForLeaseAddressJLabel.setBackground(new Color(0, 128, 128));
-		propertyForLeaseAddressJLabel.setFont(new Font("Lohit Devanagari", Font.BOLD, 18));
-		propertyForLeaseAddressJLabel.setForeground(new Color(224, 255, 255));
-		panel.add(propertyForLeaseAddressJLabel);
+		JLabel propertyForSaleAddressJLabel = new JLabel("Property Street Address:");
+		propertyForSaleAddressJLabel.setBackground(new Color(0, 128, 128));
+		propertyForSaleAddressJLabel.setFont(new Font("Lohit Devanagari", Font.BOLD, 18));
+		propertyForSaleAddressJLabel.setForeground(new Color(224, 255, 255));
+		panel.add(propertyForSaleAddressJLabel);
 		
-		propertyForLeaseAddressTextField = new JTextField();
-		panel.add(propertyForLeaseAddressTextField);
-		propertyForLeaseAddressTextField.setColumns(10);
+		propertyForSaleAddressTextField = new JTextField();
+		panel.add(propertyForSaleAddressTextField);
+		propertyForSaleAddressTextField.setColumns(10);
 		
-		JLabel propertyForLeaseTownJlabel = new JLabel("Town Location:");
-		propertyForLeaseTownJlabel.setFont(new Font("Lohit Devanagari", Font.BOLD, 18));
-		propertyForLeaseTownJlabel.setForeground(new Color(224, 255, 255));
-		panel.add(propertyForLeaseTownJlabel);
+		JLabel propertyForSaleTownJlabel = new JLabel("Town Location:");
+		propertyForSaleTownJlabel.setFont(new Font("Lohit Devanagari", Font.BOLD, 18));
+		propertyForSaleTownJlabel.setForeground(new Color(224, 255, 255));
+		panel.add(propertyForSaleTownJlabel);
 		
-		propertyForLeaseTownTextField = new JTextField();
-		panel.add(propertyForLeaseTownTextField);
-		propertyForLeaseTownTextField.setColumns(10);
+		propertyForSaleTownTextField = new JTextField();
+		panel.add(propertyForSaleTownTextField);
+		propertyForSaleTownTextField.setColumns(10);
 		
-		JLabel propertyForLeaseUniqueCodeJLabel = new JLabel("Property Code:");
-		propertyForLeaseUniqueCodeJLabel.setFont(new Font("Lohit Devanagari", Font.BOLD, 18));
-		propertyForLeaseUniqueCodeJLabel.setForeground(new Color(224, 255, 255));
-		panel.add(propertyForLeaseUniqueCodeJLabel);
+		JLabel propertyForSaleUniqueCodeJLabel = new JLabel("Property Code:");
+		propertyForSaleUniqueCodeJLabel.setFont(new Font("Lohit Devanagari", Font.BOLD, 18));
+		propertyForSaleUniqueCodeJLabel.setForeground(new Color(224, 255, 255));
+		panel.add(propertyForSaleUniqueCodeJLabel);
 		
-		propertyForLeaseUniqueCodeTextField = new JTextField();
-		panel.add(propertyForLeaseUniqueCodeTextField);
-		propertyForLeaseUniqueCodeTextField.setColumns(10);
+		propertyForSaleUniqueCodeTextField = new JTextField();
+		panel.add(propertyForSaleUniqueCodeTextField);
+		propertyForSaleUniqueCodeTextField.setColumns(10);
 		
-		JLabel propertyForLeaseOwnerCodeJlabel = new JLabel("Property OwnerCode:");
-		propertyForLeaseOwnerCodeJlabel.setFont(new Font("Lohit Devanagari", Font.BOLD, 18));
-		propertyForLeaseOwnerCodeJlabel.setForeground(new Color(224, 255, 255));
-		panel.add(propertyForLeaseOwnerCodeJlabel);
+		JLabel propertyForSaleOwnerCodeJlabel = new JLabel("Property OwnerCode:");
+		propertyForSaleOwnerCodeJlabel.setFont(new Font("Lohit Devanagari", Font.BOLD, 18));
+		propertyForSaleOwnerCodeJlabel.setForeground(new Color(224, 255, 255));
+		panel.add(propertyForSaleOwnerCodeJlabel);
 		
-		propertyForLeaseOwnerCodeTextField = new JTextField();
-		panel.add(propertyForLeaseOwnerCodeTextField);
-		propertyForLeaseOwnerCodeTextField.setColumns(10);
+		propertyForSaleOwnerCodeTextField = new JTextField();
+		panel.add(propertyForSaleOwnerCodeTextField);
+		propertyForSaleOwnerCodeTextField.setColumns(10);
 		
 		JLabel propertyForSaleOrLeaseIdentifierJlabel = new JLabel("For Sale or Lease Digit:");
 		propertyForSaleOrLeaseIdentifierJlabel.setFont(new Font("Lohit Devanagari", Font.BOLD, 18));
@@ -90,6 +92,24 @@ public class AddNewPropertyForSale extends JFrame {
 		propertyForLeaseDigitIdentifierTextField = new JTextField();
 		panel.add(propertyForLeaseDigitIdentifierTextField);
 		propertyForLeaseDigitIdentifierTextField.setColumns(10);
+		
+		JLabel propertyForSaleAmountToReceiveJlabel = new JLabel("Amount To Receive:");
+		propertyForSaleAmountToReceiveJlabel.setForeground(new Color(224, 255, 255));
+		propertyForSaleAmountToReceiveJlabel.setFont(new Font("Lohit Devanagari", Font.BOLD, 18));
+		panel.add(propertyForSaleAmountToReceiveJlabel);
+		
+		propertyForSaleAmountToReceiveTextField = new JTextField();
+		panel.add(propertyForSaleAmountToReceiveTextField);
+		propertyForSaleAmountToReceiveTextField.setColumns(10);
+		
+		JLabel propertyForSaleAreaOfBuildingLabel = new JLabel("Area of Building:");
+		propertyForSaleAreaOfBuildingLabel.setFont(new Font("Lohit Devanagari", Font.BOLD, 18));
+		propertyForSaleAreaOfBuildingLabel.setForeground(new Color(224, 255, 255));
+		panel.add(propertyForSaleAreaOfBuildingLabel);
+		
+		propertyForSaleAreaOfBuildingTextField = new JTextField();
+		panel.add(propertyForSaleAreaOfBuildingTextField);
+		propertyForSaleAreaOfBuildingTextField.setColumns(10);
 	}
 
 
