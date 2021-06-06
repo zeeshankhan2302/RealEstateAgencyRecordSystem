@@ -2,16 +2,21 @@ package com.realestate.agency;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
+
+import com.realestate.agency.model.RentalProperty;
+import com.realestate.agency.util.RealEstateAgencyUtil;
 
 public class AddNewPropertyForLease extends JFrame {
 
@@ -24,6 +29,7 @@ public class AddNewPropertyForLease extends JFrame {
 	private JTextField propertyForLeaseNameOfTenantTextField;
 	private JTextField propertyForLeaseTenantPhoneNumberTextField;
 
+	private int propertyForSaleOrBeingLeased = -1;
 	/**
 	 * Create the frame.
 	 */
@@ -120,12 +126,69 @@ public class AddNewPropertyForLease extends JFrame {
 		contentPane.add(panelBackToMainMenuPanel, BorderLayout.SOUTH);
 		panelBackToMainMenuPanel.setLayout(new BorderLayout(0, 0));
 		
-		JButton btnNewButton = new JButton("Back To Main Menu");
-		btnNewButton.setFont(new Font("Lohit Devanagari", Font.ITALIC, 14));
-		btnNewButton.setBackground(new Color(0, 128, 128));
-		btnNewButton.setForeground(new Color(224, 255, 255));
-		panelBackToMainMenuPanel.add(btnNewButton);
+		JButton buttonBackToMenu = new JButton("Back To Main Menu");
+		buttonBackToMenu.setFont(new Font("Lohit Devanagari", Font.ITALIC, 14));
+		buttonBackToMenu.setBackground(new Color(0, 128, 128));
+		buttonBackToMenu.setForeground(new Color(224, 255, 255));
+		
+		buttonBackToMenu.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				validateInput();
+				addNewPropertyForLeaseToMemory();
+				if (propertyForSaleOrBeingLeased == 1)
+					removePreviousWindowFromView();
+			}
+
+		});
+		
+		panelBackToMainMenuPanel.add(buttonBackToMenu);
 		this.setResizable(false);
 	}
 
+	 private void validateInput() {
+		
+		 try {
+				propertyForSaleOrBeingLeased = Integer.parseInt(propertyForLeaseDigitIdentifierTextField.getText().toString());
+
+			} catch (Exception e2) {
+
+				if (((propertyForSaleOrBeingLeased != 1|| propertyForSaleOrBeingLeased == -1) || propertyForSaleOrBeingLeased > 2)) {
+					JOptionPane.showMessageDialog(AddNewPropertyForLease.this, "The Identifier Digit must be a digit 1");
+
+				}
+
+				RealEstateAgencyUtil.addNewPropertyForLeaseInstance().setVisible(false);
+				RealEstateAgencyUtil.menuFrameInstance().setVisible(true);
+
+			}
+	 }
+	 
+	 private void addNewPropertyForLeaseToMemory() {
+		 
+		// adding the infor to memory
+			
+			RentalProperty leaseProperty=new RentalProperty();
+			
+			leaseProperty.setStreetAddress(propertyForLeaseAddressTextField.getText());
+			leaseProperty.setSurbub(propertyForLeaseTownTextField.getText());
+			leaseProperty.setUniquePropertyCode(propertyForLeaseUniqueCodeTextField.getText());
+			leaseProperty.setPropertyOwnerCode(propertyForLeaseOwnerCodeTextField.getText());
+			leaseProperty.setPropertyForSaleorLeased(propertyForSaleOrBeingLeased);
+			leaseProperty.setNameOfTenant(propertyForLeaseNameOfTenantTextField.getText());
+			leaseProperty.setTenantPhoneNumber(propertyForLeaseTenantPhoneNumberTextField.getText());
+			
+			
+			RealEstateAgencyUtil.getRentalPropertyList().add(leaseProperty); 
+	 }
+	 
+	 private void removePreviousWindowFromView() {
+		 
+		// removing the previous window from view
+			JOptionPane.showMessageDialog(AddNewPropertyForLease.this, "You added a new property For Lease successfully !!");
+			AddNewPropertyForLease.this.setVisible(false);
+			RealEstateAgencyUtil.menuFrameInstance().setVisible(true);
+	 }
 }

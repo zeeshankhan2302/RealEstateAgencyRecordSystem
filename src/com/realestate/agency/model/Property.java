@@ -8,7 +8,7 @@ public abstract class Property {
 	protected String surbub;
 	protected String uniquePropertyCode;
 	protected String propertyOwnerCode;
-	protected boolean isPropertyForSaleorLeased;
+	protected int isPropertyForSaleorLeased;
 	
 	//methods that control the operation of property
 	public String getStreetAddress() {
@@ -35,10 +35,10 @@ public abstract class Property {
 	public void setPropertyOwnerCode(String propertyOwnerCode) {
 		this.propertyOwnerCode = propertyOwnerCode;
 	}
-	public boolean isPropertyForSaleorLeased() {
+	public int isPropertyForSaleorLeased() {
 		return isPropertyForSaleorLeased;
 	}
-	public void setPropertyForSaleorLeased(boolean isPropertyForSaleorLeased) {
+	public void setPropertyForSaleorLeased(int isPropertyForSaleorLeased) {
 		this.isPropertyForSaleorLeased = isPropertyForSaleorLeased;
 	}	
 	

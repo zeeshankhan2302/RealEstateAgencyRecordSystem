@@ -7,7 +7,9 @@ import com.realestate.agency.AddNewPropertyForLease;
 import com.realestate.agency.AddNewPropertyForSale;
 import com.realestate.agency.AddNewSaler;
 import com.realestate.agency.MenuFrame;
+import com.realestate.agency.PropertiesForSaleReport;
 import com.realestate.agency.RealEstateAgencyRecordSystemWelcomeScreen;
+import com.realestate.agency.RentalPropertiesReport;
 import com.realestate.agency.model.LandLord;
 import com.realestate.agency.model.RentalProperty;
 import com.realestate.agency.model.SaleProperty;
@@ -32,6 +34,8 @@ public class RealEstateAgencyUtil {
 	private static AddNewPropertyForLease addNewPropertyForLease;
 	private static AddNewPropertyForSale addNewPropertyForSale;
 	private static RealEstateAgencyRecordSystemWelcomeScreen realEstateAgencyRecordSystemWelcomeScreen;
+	private static PropertiesForSaleReport propertiesForSaleReport;
+	private static RentalPropertiesReport rentalPropertiesReport;
 
 	
 	//data structures to hold values temporarily before being stored in csv files
@@ -95,6 +99,25 @@ public class RealEstateAgencyUtil {
 			
 		}
 		return realEstateAgencyRecordSystemWelcomeScreen;
+	}
+	
+	public static  PropertiesForSaleReport  propertiesForSaleReportInstance() {
+		
+		if(propertiesForSaleReport==null) {
+			
+			propertiesForSaleReport=new PropertiesForSaleReport();
+		}
+		
+		return propertiesForSaleReport;
+	}
+	
+	public static RentalPropertiesReport rentalPropertiesReportInstance() {
+		
+		if(rentalPropertiesReport==null) {
+			rentalPropertiesReport=new RentalPropertiesReport();	
+		}
+		
+		return rentalPropertiesReport;
 	}
 
 	public static ArrayList<LandLord> getLandLordList() {

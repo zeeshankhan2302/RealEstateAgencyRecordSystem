@@ -120,7 +120,7 @@ public class AddNewSaler extends JFrame {
 
 				validateInput();
 				addSalerToMemory();
-				if(salerOrLandLOrd==1 ||salerOrLandLOrd==2)
+				if(salerOrLandLOrd==1)
 				removePreviousWindowFromView();
 
 			}
@@ -146,7 +146,6 @@ public class AddNewSaler extends JFrame {
 
 		RealEstateAgencyUtil.getSalerList().add(saler);
 
-		System.out.println(RealEstateAgencyUtil.getSalerList());
 	}
 
 	private void removePreviousWindowFromView() {
@@ -164,9 +163,9 @@ public class AddNewSaler extends JFrame {
 
 		} catch (Exception e2) {
 
-			if (((salerOrLandLOrd != 1 || salerOrLandLOrd != 2) || salerOrLandLOrd == -1) || salerOrLandLOrd > 2) {
+			if ((salerOrLandLOrd != 1 || salerOrLandLOrd == -1) || salerOrLandLOrd > 2) {
 				JOptionPane.showMessageDialog(AddNewSaler.this,
-						"The saler or LandLordIdentifier must be a digit either 1 or 2");
+						"The saler or LandLordIdentifier must be a digit 1");
 
 			}
 

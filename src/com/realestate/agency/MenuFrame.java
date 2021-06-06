@@ -172,6 +172,15 @@ public class MenuFrame extends JFrame implements ActionListener {
 
 		if (buttonClicked == resetDataButton) {
 			//handle Data Reset
+			//set the memories to null
+			
+			RealEstateAgencyUtil.setLandLordList(null);
+			RealEstateAgencyUtil.setSalerList(null);
+			RealEstateAgencyUtil.setSalePropertyList(null);
+			RealEstateAgencyUtil.setRentalPropertyList(null);
+			
+			JOptionPane.showMessageDialog(this, "You have reset all the data in the memory");
+			
 
 		} else if (buttonClicked == addSellerButton) {
 			//add a new saler
@@ -199,8 +208,13 @@ public class MenuFrame extends JFrame implements ActionListener {
 		} else if (buttonClicked == buttonGeneratePropertyForSaleReport) {
 
 			//generate Report for sale property
+			
+			RealEstateAgencyUtil.propertiesForSaleReportInstance().setVisible(true);
+			
 		} else if (buttonClicked == buttonGenerateReportForRental) {
 			//generate report for rental property
+			
+			RealEstateAgencyUtil.rentalPropertiesReportInstance().setVisible(true);
 
 		} else if (buttonClicked == buttonExitProgram) {
 			//do program cleanup here before exit
