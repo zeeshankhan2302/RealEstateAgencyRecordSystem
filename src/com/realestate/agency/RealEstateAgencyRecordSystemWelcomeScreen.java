@@ -5,14 +5,17 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-public class RealEstateAgencyRecordSystemWelcomeScreen extends JFrame {
+public class RealEstateAgencyRecordSystemWelcomeScreen extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 
@@ -70,13 +73,28 @@ public class RealEstateAgencyRecordSystemWelcomeScreen extends JFrame {
 		panel_1.setBackground(new Color(0, 128, 128));
 		contentPane.add(panel_1, BorderLayout.SOUTH);
 
-		JPanel panel_3 = new JPanel();
-		panel_1.add(panel_3);
-		panel_3.setLayout(new BorderLayout(4, 4));
+		JPanel panelNextWelcome = new JPanel();
+		panel_1.add(panelNextWelcome);
+		panelNextWelcome.setLayout(new BorderLayout(4, 4));
 
-		JLabel lblNewLabel_1 = new JLabel("NEXT");
-		lblNewLabel_1.setFont(new Font("Lohit Devanagari", Font.BOLD, 16));
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_3.add(lblNewLabel_1, BorderLayout.NORTH);
+		JButton buttonNextWelcome = new JButton("NEXT");
+		buttonNextWelcome.setBackground(new Color(224, 255, 255));
+		buttonNextWelcome.setForeground(new Color(0, 0, 0));
+		buttonNextWelcome.setFont(new Font("Lohit Devanagari", Font.BOLD, 18));
+		buttonNextWelcome.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		buttonNextWelcome.addActionListener(this);
+		panelNextWelcome.add(buttonNextWelcome, BorderLayout.CENTER);
+		
+		this.setResizable(false);
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		this.setVisible(false);
+		MenuFrame mf=new MenuFrame();
+		mf.setVisible(true);
 	}
 }
